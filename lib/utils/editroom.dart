@@ -128,7 +128,7 @@ class _renaState extends State<rena> {
                       if (k == Colors.grey) {
                         node.requestFocus();
                       } else {
-                        int z = edi(widget.s);
+                        int z = indi(widget.s);
                         con.removeAt(z);
                         indd(q, context, z);
                         //ins(q, context, z);
@@ -156,7 +156,7 @@ class _renaState extends State<rena> {
                     pop: one,
                     label: 'Delete Room',
                     onPressed: () {
-                      int z = indi(widget.s);
+                      int z = edi(widget.s);
                       con.removeAt(z);
                       index--;
 
