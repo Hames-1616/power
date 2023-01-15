@@ -2,7 +2,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:power/screens/Register.dart';
-import 'package:mac_address/mac_address.dart';
 import 'package:power/screens/page1.dart';
 import 'package:power/screens/register2.dart';
 import 'package:power/utils/Dimensions.dart';
