@@ -7,8 +7,6 @@ import 'package:power/screens/page1-2.dart';
 import 'package:power/utils/Dimensions.dart';
 import 'package:power/utils/colors.dart';
 import 'package:power/utils/list.dart';
-import 'package:simply_wifi/simply_wifi.dart';
-import 'package:wifi_iot/wifi_iot.dart';
 
 class disp1 extends StatefulWidget {
   const disp1({super.key});

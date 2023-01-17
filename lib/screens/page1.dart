@@ -23,7 +23,7 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
-  List<Widget> wide = [disp1(), disp2(), disp3(), disp4()];
+  List<Widget> wide = [disp1(), disp2(), disp3(), MyApp()];
 
   var currentIndex = 0;
   int index = -1;

@@ -1,5 +1,4 @@
 import 'package:app_settings/app_settings.dart';
-import 'package:simply_wifi/simply_wifi.dart';
 import 'package:flutter/material.dart';
 import 'package:power/utils/Customtext.dart';
 import 'package:power/utils/Dimensions.dart';
@@ -14,6 +13,8 @@ class disp3 extends StatefulWidget {
 }
 
 class _disp3State extends State<disp3> {
+  String ssid = "Morphine";
+  String passw = "aika5ae8zoV8iepe";
   int s = 0;
   int p = 0;
   bool empty1 = false;
@@ -117,9 +118,6 @@ class _disp3State extends State<disp3> {
               label: 'Connect',
               onPressed: () {
                 if (k == one) {
-                  String name = "POCOX3";
-                  String key = pass.text;
-                  SimplyWifi.connectWifiByName(name, password: 'poco12345');
                 }
               },
             ),
