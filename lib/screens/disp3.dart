@@ -1,9 +1,6 @@
+import 'package:app_settings/app_settings.dart';
+import 'package:simply_wifi/simply_wifi.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:power/screens/page1.dart';
 import 'package:power/utils/Customtext.dart';
 import 'package:power/utils/Dimensions.dart';
 import 'package:power/utils/buttonl.dart';
@@ -17,7 +14,7 @@ class disp3 extends StatefulWidget {
 }
 
 class _disp3State extends State<disp3> {
-    int s = 0;
+  int s = 0;
   int p = 0;
   bool empty1 = false;
   bool empty2 = false;
@@ -29,8 +26,12 @@ class _disp3State extends State<disp3> {
   TextEditingController user = new TextEditingController();
   @override
   Widget build(BuildContext context) {
+    if (empty1 == true && empty2 == true) {
+      k = one;
+    } else
+      k = Colors.grey;
     return Scaffold(
-       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Container(
         alignment: Alignment.center,
         child: Text(
@@ -69,7 +70,7 @@ class _disp3State extends State<disp3> {
               //empty1 = true;
               s = value.length;
 
-              if (s >= 10)
+              if (s >= 5)
                 empty1 = true;
               else
                 empty1 = false;
@@ -81,7 +82,7 @@ class _disp3State extends State<disp3> {
         alignment: Alignment.center,
         child: CustomTextField(
           con: pass,
-          a: 8,
+          a: 9,
           hintText: 'Password',
           icon: Icons.lock,
           obscureText: true,
@@ -115,11 +116,31 @@ class _disp3State extends State<disp3> {
               pop: k,
               label: 'Connect',
               onPressed: () {
-                
+                if (k == one) {
+                  String name = "POCOX3";
+                  String key = pass.text;
+                  SimplyWifi.connectWifiByName(name, password: 'poco12345');
+                }
+              },
+            ),
+          ])),
+      //SizedBox(height: MediaQuery.of(context).size.width/wid(context, 5),),
+      Padding(
+          padding: EdgeInsets.only(
+            left: MediaQuery.of(context).size.width / wid(context, 20.0),
+            right: MediaQuery.of(context).size.width / wid(context, 20.0),
+            bottom: MediaQuery.of(context).size.height / hei(context, 20.0),
+          ),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            button1(
+              pop: one,
+              label: 'Open Network Manager',
+              onPressed: () {
+                AppSettings.openWIFISettings();
               },
             ),
           ]))
-    ]))
-    ;
+    ]));
   }
 }
