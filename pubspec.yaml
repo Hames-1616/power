@@ -39,13 +39,12 @@ dependencies:
   get: ^4.6.5
   flutter_svg: ^1.1.6
   blobs: ^2.0.0
-  fluttertoast: ^8.1.2
   google_nav_bar: ^5.0.6
   flutter_material_pickers: ^3.3.0
-  app_settings: ^4.2.0
   connectivity: ^3.0.6
   wifi_scan: ^0.4.0+1
-  wifi_connector: ^2.0.0
+  permission_handler: ^9.2.0
+
 
 
 dev_dependencies:

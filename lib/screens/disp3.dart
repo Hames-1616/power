@@ -1,5 +1,6 @@
-import 'package:app_settings/app_settings.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:power/utils/Customtext.dart';
 import 'package:power/utils/Dimensions.dart';
 import 'package:power/utils/buttonl.dart';
@@ -13,8 +14,14 @@ class disp3 extends StatefulWidget {
 }
 
 class _disp3State extends State<disp3> {
-  String ssid = "Morphine";
-  String passw = "aika5ae8zoV8iepe";
+  static const platform = MethodChannel("check");
+  String ssid = "";
+  String passw = "";
+  Future<void> _connect() async {
+    var arguments = {'ssi': 'ICMS SKILL LIMITED', 'pass': 'zaffer@123456789'};
+    var conne = await platform.invokeListMethod('connect', arguments);
+  }
+
   int s = 0;
   int p = 0;
   bool empty1 = false;
@@ -115,9 +122,10 @@ class _disp3State extends State<disp3> {
               Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
             button1(
               pop: k,
-              label: 'Connect',
+              label: "Connect",
               onPressed: () {
                 if (k == one) {
+                  _connect();
                 }
               },
             ),
@@ -135,7 +143,7 @@ class _disp3State extends State<disp3> {
               pop: one,
               label: 'Open Network Manager',
               onPressed: () {
-                AppSettings.openWIFISettings();
+                
               },
             ),
           ]))

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:power/screens/page1-1.dart';
 import 'package:power/utils/Dimensions.dart';
@@ -160,10 +159,7 @@ class _Page11State extends State<Page11> {
                                     color: one,
                                     icon: up,
                                     onPressed: () {
-                                      Fluttertoast.showToast(
-                                          msg: "hello",
-                                          toastLength: Toast.LENGTH_SHORT,
-                                          gravity: ToastGravity.BOTTOM);
+                                    
                                     },
                                   )),
                               SizedBox(
